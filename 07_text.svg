@@ -36,7 +36,7 @@ radius of 10, ending back at coordinate (75,90).”
 -->
 <path d="M 75 90 L 65 90 A 5 10 0 0 0 75 90" stroke="black" fill="#ffcccc" />
 
-<text x="60" y="165" style="font-family: sans-serif; font-size; 14pt;"
+<text x="60" y="165" style="font-family: Verdana; font-size; 14pt;"
   stroke="none" fill="black">Cat</text>
 
 </svg>
