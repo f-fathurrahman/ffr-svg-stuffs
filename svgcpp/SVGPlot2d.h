@@ -26,17 +26,19 @@ public:
 // Constructor
 SVGDraw2d::SVGDraw2d()
 {
-  cout << "Constructor is called" << endl;
-  str = "<svg width=\"140\" height=\"170\"xmlns=\"http://www.w3.org/2000/svg\"\n";
+  //cout << "Constructor is called" << endl;
+  str = "<svg width=\"140\" height=\"170\"\n";
+  str += "xmlns=\"http://www.w3.org/2000/svg\"\n";
   str += "xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n";
 }
 
 // Destructor
 SVGDraw2d::~SVGDraw2d()
 {
-  cout << "Destructor is called" << endl;
+  //cout << "Destructor is called" << endl;
 }
 
+// Finalize and write
 void SVGDraw2d::write()
 {
   str += "</svg>\n";
@@ -46,7 +48,9 @@ void SVGDraw2d::write()
 
 void SVGDraw2d::draw_line( double x1, double y1, double x2, double y2, string style )
 {
-
+  str += "<line x1=\"" +  to_string(x1) + "\" y1=\"" + to_string(y1) +
+         "\" x2=\"" + to_string(x2) + "\" y2=\"" + to_string(y2) + "\" style = \"" + style +
+         "\"/>\n";
 }
 
 void SVGDraw2d::draw_circle( double cx, double cy, double r, string style )
