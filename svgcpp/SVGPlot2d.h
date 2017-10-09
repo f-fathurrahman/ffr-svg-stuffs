@@ -11,9 +11,12 @@ class SVGDraw2d
 
 public:
 
-  SVGDraw2d();
+  SVGDraw2d( int width, int height );
   ~SVGDraw2d();
 
+  int height;
+  int width;
+  
   string str;
 
   void write();
@@ -25,10 +28,12 @@ public:
 
 // Constructor
 // need arguments for width and height
-SVGDraw2d::SVGDraw2d()
+SVGDraw2d::SVGDraw2d( int width, int height )
 {
+  this->width = width;
+  this->height = height;
   //cout << "Constructor is called" << endl;
-  str = "<svg width=\"1000\" height=\"1000\"\n";
+  str = "<svg width=\"" + to_string(width) + "\" height=\"" + to_string(height) + "\"\n";
   str += "xmlns=\"http://www.w3.org/2000/svg\"\n";
   str += "xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n";
 }
