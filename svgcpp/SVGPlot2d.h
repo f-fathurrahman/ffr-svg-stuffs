@@ -24,19 +24,17 @@ public:
 };
 
 // Constructor
+// need arguments for width and height
 SVGDraw2d::SVGDraw2d()
 {
   //cout << "Constructor is called" << endl;
-  str = "<svg width=\"140\" height=\"170\"\n";
+  str = "<svg width=\"1000\" height=\"1000\"\n";
   str += "xmlns=\"http://www.w3.org/2000/svg\"\n";
   str += "xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n";
 }
 
 // Destructor
-SVGDraw2d::~SVGDraw2d()
-{
-  //cout << "Destructor is called" << endl;
-}
+SVGDraw2d::~SVGDraw2d() { }
 
 // Finalize and write
 void SVGDraw2d::write()
@@ -55,7 +53,9 @@ void SVGDraw2d::draw_line( double x1, double y1, double x2, double y2, string st
 
 void SVGDraw2d::draw_circle( double cx, double cy, double r, string style )
 {
-
+  str += "<circle cx=\"" + to_string(cx) + "\" cy=\"" + to_string(cy) +
+         "\" r=\"" + to_string(r) + "\" style=\"" + style +
+         "\"/>\n";
 }
 
 void SVGDraw2d::draw_polyline( double *pts, string style )
