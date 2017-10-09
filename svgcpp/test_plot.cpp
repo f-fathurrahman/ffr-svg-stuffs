@@ -13,9 +13,9 @@ int main()
   int WIDTH  = 600;
   int HEIGHT = 400;
 
+  // these values should be analyzed from input data to plot function
   double XMIN = -5.0;
   double XMAX =  5.0;
-
   double YMIN = -5.0;
   double YMAX =  5.0;
 
@@ -31,22 +31,34 @@ int main()
   
   int i;
 
+  // prepare data
   double delta_x = (XMAX-XMIN)/(Npts-1);
   for( i = 0; i < Npts; i++ ) {
     x[i] = XMIN + i*delta_x;
-//    printf("i, x = %d %f\n", i, x[i]);
-    y[i] = YMAX*sin(M_PI*x[i]);
-//    printf("%18.10f %18.10f\n", x[i], y[i]);
+    y[i] = YMAX*cos(0.5*M_PI*x[i]);
   }
 
 
   SVGDraw2d plt( WIDTH+2*PAD, HEIGHT+2*PAD );
 
   string style = "stroke: black;";
-  plt.draw_line( 0.0+PAD, 0.0+PAD, WIDTH+PAD, 0.0+PAD, style );
-  plt.draw_line( WIDTH+PAD, 0.0+PAD, WIDTH+PAD, HEIGHT+PAD, style );
-  plt.draw_line( WIDTH+PAD, HEIGHT+PAD, 0.0+PAD, HEIGHT+PAD, style );
-  plt.draw_line( 0.0+PAD, HEIGHT+PAD, 0.0+PAD, 0.0+PAD, style );
+  // corners
+  double xc1 = 0.0 + PAD;
+  double yc1 = 0.0 + PAD;
+  //
+  double xc2 = WIDTH + PAD;
+  double yc2 = 0.0 + PAD;
+  //
+  double xc3 = WIDTH + PAD;
+  double yc3 = HEIGHT + PAD;
+  //
+  double xc4 = 0.0 + PAD;
+  double yc4 = HEIGHT + PAD;
+  //
+  plt.draw_line( xc1, yc1, xc2, yc2, style );
+  plt.draw_line( xc2, yc2, xc3, yc3, style );
+  plt.draw_line( xc3, yc3, xc4, yc4, style );
+  plt.draw_line( xc4, yc4, xc1, yc1, style );
 
   // scale data
   for( i = 0; i < Npts; i++ ) {

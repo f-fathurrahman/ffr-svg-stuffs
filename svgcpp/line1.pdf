@@ -1,0 +1,14 @@
+
+<svg width="1000" height="1000" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    <line x1="100.000000" y1="100.000000" x2="100.000000" y2="200.000000"
+          style="stroke: red;"/>
+    <circle cx="100.000000" cy="300.000000" r="30.000000" style="fill: blue;"/>
+    <circle cx="100.000000" cy="150.000000" r="3.000000" style="fill: black;"/>
+    <circle cx="200.000000" cy="250.000000" r="3.000000" style="fill: black;"/>
+    <circle cx="300.000000" cy="350.000000" r="3.000000" style="fill: black;"/>
+    <circle cx="350.000000" cy="350.000000" r="3.000000" style="fill: black;"/>
+    <circle cx="400.000000" cy="450.000000" r="3.000000" style="fill: black;"/>
+    <polyline points="100.000000 150.000000 200.000000 250.000000 300.000000 350.000000 350.000000 350.000000 400.000000 450.000000 "
+              style="stroke: blue; fill: none;"/>
+</svg>
