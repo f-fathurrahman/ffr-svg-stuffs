@@ -19,7 +19,7 @@ public:
   void write();
   void draw_line( double x1, double y1, double x2, double y2, string style );
   void draw_circle( double cx, double cy, double r, string style );
-  void draw_polyline( double *pts, string style );
+  void draw_polyline( const int Npts, double *xpts, double *ypts, string style );
 
 };
 
@@ -58,9 +58,13 @@ void SVGDraw2d::draw_circle( double cx, double cy, double r, string style )
          "\"/>\n";
 }
 
-void SVGDraw2d::draw_polyline( double *pts, string style )
+void SVGDraw2d::draw_polyline( const int Npts, double* xpts, double* ypts, string style )
 {
-
+  str += "<polyline points=\"";
+  for( int i = 0; i < Npts; i++ ) {
+    str += to_string(xpts[i]) + " " + to_string(ypts[i]) + " ";
+  }
+  str += "\" style=\"" + style + "\"/>\n";
 }
 
 
